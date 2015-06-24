@@ -5,6 +5,7 @@ let mui = require('material-ui');
 let RaisedButton = mui.RaisedButton;
 let ThemeManager = new mui.Styles.ThemeManager();
 let Colors = mui.Styles.Colors;
+let DropDownMenu = mui.DropDownMenu;
 
 let Main = React.createClass({
 
@@ -27,10 +28,15 @@ let Main = React.createClass({
   render() {
 
     let containerStyle = {
-      textAlign: 'center',
-      paddingTop: '200px'
+      textAlign: 'center'
     };
-
+	var menuItems = [
+	   { payload: '1', text: 'Never' },
+	   { payload: '2', text: 'Every Night' },
+	   { payload: '3', text: 'Weeknights' },
+	   { payload: '4', text: 'Weekends' },
+	   { payload: '5', text: 'Weekly' },
+	];
     return (
       <div style={containerStyle}>
 
@@ -38,7 +44,7 @@ let Main = React.createClass({
         <h2>example project</h2>
 
         <RaisedButton label="Super Secret Password" primary={true} onTouchTap={this._handleTouchTap} />
-
+		<DropDownMenu menuItems={menuItems} />
       </div>
     );
   },
