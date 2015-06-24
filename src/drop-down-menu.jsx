@@ -235,6 +235,7 @@ let DropDownMenu = React.createClass({
   },
 
   _onKeyDown(e) {
+    alert("_onKeyDown");
     switch(e.which) {
       case KeyCode.UP:
         if (!this.state.open)
